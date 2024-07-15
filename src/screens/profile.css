@@ -2,20 +2,23 @@
     background-color: #FFF3F3;
 }
 .header {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
-
 .navi_content {
-    padding: 8px ;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 2px ;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size:18px;  
-    border-radius: 15px;
+    border-radius:100px;
     background-color:white;
+    width: 120px;
+    height: 40px;
+    
 }
 
 .content_container{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    margin-top: 100px;
+    margin-top: 100px;   
 }

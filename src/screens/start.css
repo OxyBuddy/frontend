@@ -2,16 +2,19 @@
     background-color: #FFF3F3;
 }
 .header {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .navi_content {
-    padding: 8px ;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 2px ;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size:18px;  
-    border-radius: 15px;
+    border-radius:100px;
     background-color:white;
+    width: 120px;
+    height: 40px;
+    
 }
 
 .solve_problem{
@@ -20,4 +23,7 @@
     background-color:#F1A7A7;
     border-radius:15px;
     padding: 8px 30px;
+    width: 220px;
+    height: 40px;
+    margin-bottom: 5px;
 }

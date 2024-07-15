@@ -1,10 +1,9 @@
 import './analyze.css'
-//import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const Analyze = () => {
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handle_submit = (event) => {
         event.preventDefault(); // 버튼 잠시 금지
@@ -33,13 +32,38 @@ const Analyze = () => {
     <div className="App">
       <div className='header'>
         <ul style={{padding: 0,listStyle:'none', flex: 1,flexDirection: 'row', display: 'flex', justifyContent: 'space-around'}}>
-          <li><a className="navi_content" style={{color: '#E56767'}}>프로필</a></li>
-          <li><a className="navi_content" style={{color: '#ffffff', backgroundColor: '#FDD4D4'}}>대화분석</a></li>
-          <li><a className="navi_content" style={{color: '#E56767'}}>기록</a></li>
+        <li>
+          <button
+            className="navi_content"
+            style={{ color: '#E56767', marginLeft: 0, border: 'none', cursor: 'pointer' }}
+            onClick={() => navigate('/profile')}
+          >
+          프로필
+          </button>
+        </li>
+        <li>
+          <button
+            className="navi_content"
+            style={{ color: '#ffffff',backgroundColor: '#FDD4D4', border: 'none', cursor: 'pointer' }}
+            onClick={() => navigate('/analyze')}
+          >
+          대화분석
+          </button>
+        </li>
+        <li>
+          <button
+            className="navi_content"
+            style={{ color: '#E56767',  border: 'none', cursor: 'pointer' }}
+            onClick={() => navigate('/record')}
+          >
+          기록
+          </button>
+        </li>
         </ul>
       </div>
+      <h1 style={{fontSize:'40px', fontWeight:'bold', color:'#F1A7A7', marginBottom:'20px', textAlign:'center'}}>대화 내용 분석</h1>
       <div className="content_container">
-        <h1 style={{fontSize:'40px', fontWeight:'bold', color:'#F1A7A7', marginBottom:'20px', textAlign:'center'}}>대화 내용 분석</h1>
+        
         <form onSubmit={handle_submit} className='form_content'>
             <div className='left'>
             <label>그 사람과의 관계</label>
@@ -59,7 +83,7 @@ const Analyze = () => {
               <input type='file' name='upload' style={{height: '200px', alignContent:'center', fontSize:'0px', color:'white'}}/>
             </div>
           </div>
-          <button type='submit'>➤</button>
+          <button type='submit'onClick={()=>navigate('/analyze_result')}>➤</button>
         </form>
       </div>
     </div>

@@ -1,18 +1,43 @@
 import './profile.css'
+import { useNavigate } from 'react-router';
 
 const baby_name = '박민서';
 
 const Profile = () => {
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div className="App">
       <div className='header'>
         <ul style={{padding: 0,listStyle:'none', flex: 1,flexDirection: 'row', display: 'flex', justifyContent: 'space-around'}}>
-          <li><a className="navi_content" style={{color: '#ffffff', backgroundColor: '#FDD4D4'}}>프로필</a></li>
-          <li><a className="navi_content" style={{color: '#E56767'}}>대화분석</a></li>
-          <li><a className="navi_content" style={{color: '#E56767'}}>기록</a></li>
+        <li>
+          <button
+            className="navi_content"
+            style={{ color: '#ffffff', backgroundColor: '#FDD4D4', marginLeft: 0, border: 'none', cursor: 'pointer' }}
+            onClick={() => navigate('/profile')}
+          >
+          프로필
+          </button>
+        </li>
+        <li>
+          <button
+            className="navi_content"
+            style={{ color: '#E56767', border: 'none', cursor: 'pointer' }}
+            onClick={() => navigate('/analyze')}
+          >
+          대화분석
+          </button>
+        </li>
+        <li>
+          <button
+            className="navi_content"
+            style={{ color: '#E56767', border: 'none', cursor: 'pointer' }}
+            onClick={() => navigate('/record')}
+          >
+          기록
+          </button>
+        </li>
         </ul>
       </div>
       <div className="content_container">

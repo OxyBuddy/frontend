@@ -13,6 +13,18 @@
   }
 }
 
+.navi_content {
+  padding: 2px ;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size:18px;  
+  border-radius:100px;
+  background-color:white;
+  width: 120px;
+  height: 40px;
+  
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

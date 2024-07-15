@@ -7,35 +7,6 @@ const AnalyzeResult = () => {
   return (
     <div className="App">
       <div className='header'>
-        <ul style={{padding: 0,listStyle:'none', flex: 1,flexDirection: 'row', display: 'flex', justifyContent: 'space-around'}}>
-        <li>
-          <button
-            className="navi_content"
-            style={{ color: '#E56767', marginLeft: 0, border: 'none', cursor: 'pointer' }}
-            onClick={() => navigate('/profile')}
-          >
-          프로필
-          </button>
-        </li>
-        <li>
-          <button
-            className="navi_content"
-            style={{ color: '#ffffff',backgroundColor: '#FDD4D4', border: 'none', cursor: 'pointer' }}
-            onClick={() => navigate('/analyze')}
-          >
-          대화분석
-          </button>
-        </li>
-        <li>
-          <button
-            className="navi_content"
-            style={{ color: '#E56767',  border: 'none', cursor: 'pointer' }}
-            onClick={() => navigate('/record')}
-          >
-          기록
-          </button>
-        </li>
-        </ul>
       </div>
       <div className='content_container'>
       <div className="analyze_result">

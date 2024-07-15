@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes, useNavigate, useMatch } from 'r
 import Start from './screens/start';
 import Analyze from './screens/analyze';
 import Profile from './screens/profile';
-import Record from './screens/record';
+// import Record from './screens/record';
 import AnalyzeResult from './screens/analyze_result'
 import './App.css'
 
@@ -10,9 +10,6 @@ import './App.css'
 const NavigationBar = () => {
   const navigate = useNavigate();
 
-  const action_profile = useMatch('/profile');
-  const action_analyze = useMatch('/analyze');
-  const action_record = useMatch('/record');
 
   return (
     <div className='header'>
@@ -35,15 +32,6 @@ const NavigationBar = () => {
             대화분석
           </button>
         </li>
-        <li>
-          <button
-            className="navi_content"
-            style={{ color: '#E56767', border: 'none', cursor: 'pointer' }}
-            onClick={() => navigate('/record')}
-          >
-            기록
-          </button>
-        </li>
       </ul>
     </div>
   );
@@ -59,7 +47,7 @@ const App = () => {
                     <Route path="/" element={<Start />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/analyze" element={<Analyze />} />
-                    <Route path="/record" element={<Record />} />
+                    {/* <Route path="/record" element={<Record />} /> */}
                     <Route path="/analyze_result" element={<AnalyzeResult />} />
                 </Routes>
             </div>

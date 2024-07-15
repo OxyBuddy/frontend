@@ -11,7 +11,7 @@ const Record = () => {
       <div className='header'>
         
       </div>
-      <h1 style={{textAlign: 'center', color:'#F1A7A7', marginBottom:'70px'}}>지금까지 한 기록보기</h1>
+      <h1 style={{textAlign: 'center', color:'#F1A7A7', marginBottom:'70px',fontSize:'40px', fontWeight:'bold'}}>지금까지 한 기록보기</h1>
       <div className="content_container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 35%)', gap: '80px', width:'100%', justifyContent:'space-around'}}>
             {records.map((record, index) => (

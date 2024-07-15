@@ -10,6 +10,10 @@
     
 }
 
+.title{
+    margin-bottom: 10px;
+}
+
 .content_container{
     margin-left: 0;
     display: flex;
@@ -25,12 +29,13 @@
     justify-content: space-between;
 }
 
-.left,.right{
+.left,.right, .question_box{
     flex: 1;
 }
 
 .left label,
-.right label {
+.right label,
+.question_box label{
     display: block;
     color: #E56767;
     margin-bottom: 10px;
@@ -41,6 +46,16 @@
 .left input,
 .right input {
     width: calc(100% - 20%);
+    padding: 10px;
+    border: 1px solid #E56767;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    background-color: white;
+    font-size: 14px;
+}
+
+.question_box input {
+    width: 750px;
     padding: 10px;
     border: 1px solid #E56767;
     border-radius: 25px;

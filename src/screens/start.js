@@ -7,6 +7,8 @@ const Start = () => {
 
   return (
     <div className="App">
+      <img src='/okbun.png' className='okbun'></img>
+      <img src='/dobun.png' className='dobun'></img>
       <div className="content_container">
         <p style={{color:'#F1A7A7', fontSize: '40px', fontWeight: 'bold',marginTop:'0px', marginBottom:'40px', textAlign: 'center'}}>그 사람과의 연애 가능성이 궁금하시다구요?</p>
         <div style={{ margin: '0 auto', width: '800px', textAlign: 'center'}}>

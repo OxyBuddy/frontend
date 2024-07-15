@@ -1,7 +1,7 @@
 import './profile.css'
 import { useNavigate } from 'react-router';
 
-const baby_name = '박민서';
+const baby_name = '김유진';
 
 const Profile = () => {
 

@@ -33,6 +33,28 @@ const Profile = () => {
     }
   }
 
+  useEffect(() => {
+    fetch('/analyze_result') // 서버의 엔드포인트에 맞게 수정 필요
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch analysis result');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Analysis result:', data);
+        const percentMatch = data.response.match(/\d+% Interest Level/); // 정규 표현식을 사용하여 퍼센트 추출
+        if (percentMatch) {
+          const percent = percentMatch[0].replace('% Interest Level', ''); // % 기호와 'Interest Level' 문자열 제거
+          setBabyPercent(Number(percent)); // 추출한 퍼센트를 숫자로 변환하여 상태에 설정
+          localStorage.setItem('babyPercent', percent); // localStorage에 저장
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching analysis result:', error);
+      });
+  }, []);
+
   return (
     <div className="App">
       <div className='header'>

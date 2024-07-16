@@ -39,23 +39,19 @@ const Analyze = () => {
             setImageView(reader.result);
           };
         reader.readAsDataURL(file);
-    }
-      };
+      }
+  };
 
   return (
     <div className="App">
-      <div className='header'>
-        
-      </div>
       <h1 className="title" style={{fontSize:'40px', fontWeight:'bold', color:'#F1A7A7', marginBottom:'10px', textAlign:'center'}}>대화 내용 분석</h1>
       <div className="content_container">
-        <div className='question_box' style={{marginRight:'60px'}}>
-          <label>질문</label>
-          <input type='text' name='question'/>
-        </div>
-        
         <form onSubmit={handle_submit} className='form_content'>
-          
+            <div className='question_box'>
+              <label>질문</label>
+              <input type='text' name='question'/>
+            </div>
+            <div className='lr_container'>
             <div className='left'>
             <label>그 사람과의 관계</label>
             <input type='text' name='relation'/>
@@ -76,6 +72,7 @@ const Analyze = () => {
             </div>
           </div>
           <button type='submit'onClick={()=>navigate('/analyze_result')}>➤</button>
+          </div>
         </form>
       </div>
     </div>

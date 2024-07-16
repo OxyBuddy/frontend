@@ -27,6 +27,23 @@
     width: 900px;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+}
+
+.question_box {
+    flex: 1;
+    margin-bottom: 10px;
+    margin-right: 60px;
+}
+
+
+.left, .right {
+    flex: 1;
+}
+
+.lr_container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .left,.right, .question_box{

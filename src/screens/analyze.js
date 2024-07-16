@@ -7,7 +7,7 @@ const Analyze = () => {
   const navigate = useNavigate();
   const [imageView, setImageView] = useState(null);
 
-  const handle_submit = (event) => {
+  const handle_submit = async (event) => {
         event.preventDefault(); // 버튼 잠시 금지
     
         const formData = new FormData(event.target); // 폼 데이터 생성
@@ -16,37 +16,37 @@ const Analyze = () => {
         const response_time = formData.get('response_time');
         const contact_frequency = formData.get('contact_frequency');
         const contact_duration = formData.get('contact_duration');
-        const contact_interval = formData.get('contact_interval');
+        const contact_interval = parseInt(formData.get('contact_interval'), 10);
 
-        const selectedFormData = new FormData();
-
-
-        selectedFormData.append('relationship_status', relationship_status);
-        selectedFormData.append('response_time', response_time);
-        selectedFormData.append('contact_frequency', contact_frequency);
-        selectedFormData.append('contact_duration', contact_duration);
-        selectedFormData.append('contact_interval', contact_interval);
-        selectedFormData.append('question', question);
-
+        const payload = {
+          relationship_status,
+          response_time,
+          contact_frequency,
+          contact_duration,
+          contact_interval,
+          question,
+        };
+        console.log(payload);
+        
 
         // 서버로 데이터 보내기
-        fetch('/analyze', { // 서버 엔드포인트로 수정 필요
-          method: 'POST',
-          body: selectedFormData,
-        })
-          .then((response) => {
-            if (response.ok) {
-              // 분석 결과 페이지로 이동
-              window.location.href = '/analyze_result';
-            } else {
-              console.error('서버 응답 에러');
-            }
-          })
-          .catch((error) => {
-            console.error('서버 요청 에러:', error);
+        try {
+          const response = await fetch('http://127.0.0.1:8000/analyze', {
+            method: 'POST',
+            // headers: {
+            //   'Content-Type': 'application/json', // JSON 형식
+            // },
+            //body: JSON.stringify(payload)
+            body: JSON.stringify(payload)
           });
     
-        console.log('분석하기');
+          if (!response.ok) {
+            throw new Error('서버 응답 에러');
+          }
+          navigate('/analyze_result');
+        } catch (error) {
+          console.error('서버 요청 에러:', error);
+        }
       };
 
       const handle_Image = (event) => {

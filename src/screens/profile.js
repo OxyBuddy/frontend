@@ -34,7 +34,7 @@ const Profile = () => {
   }
 
   useEffect(() => {
-    fetch('/analyze_result') // 서버의 엔드포인트에 맞게 수정 필요
+    fetch('http://127.0.0.1:8000/analyze_result') // 서버의 엔드포인트에 맞게 수정 필요
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch analysis result');
